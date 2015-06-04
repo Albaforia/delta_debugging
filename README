@@ -1,0 +1,3 @@
+USAGE : 
+cd 0256162_HW1.3/xmlproc
+python ddmin.py demo/urls.xml
