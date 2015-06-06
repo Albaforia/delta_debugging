@@ -119,7 +119,6 @@ if __name__ == "__main__":
         print "************RESULT**OF**DELTA**DUBUGGING*************"
         print "Result : %s" % (result)
         print "At Line : %d, Char : %d" %(lineNum, charNum)
-        print "Iteration : %d" % testnum
         print "*****************************************************"
 
     file = open(INPUTFILE, 'r')
