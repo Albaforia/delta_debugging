@@ -7,6 +7,7 @@ from xml.parsers.xmlproc import xmlproc
 import re
 import sys
 import outputters
+import time
 
 PASS       = "PASS"
 FAIL       = "FAIL"
@@ -77,7 +78,7 @@ if __name__ == "__main__":
         f.close()
         testnum += 1
         print "Test Num %d" % testnum
-
+        print s
         try:
             p.parse_resource(RECORDFILE)
             if err.errors == 0:   #Parser parse xml successfully.
@@ -98,9 +99,15 @@ if __name__ == "__main__":
         print "%s" % (result)
         print "*****************************************************"
 
+    start_time = time.time()
+    
     file = open(sys.argv[1], 'r')
     content = file.read()
     file.close()
     circumstances = string_to_list(content)
     mytest(ddmin(circumstances, mytest))
     showResult(RECORDFILE)
+
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+
